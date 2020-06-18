@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <!-- google designのmaterial iconを使う -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <header>
@@ -14,11 +16,19 @@
             <!-- 右端の各アイコン、ナビのようにulで作成 -->
             <nav id="top-nav">
                 <ul>
-                    <!-- 仮に文字で、のちにアイコンに置き換え -->
-                    <li><a href="#">Mail</a></li>
-                    <li><a href="#">Storage</a></li>
-                    <li><a href="#">Bell</a></li>
-                    <li><a href="#">User</a></li>
+                    <!-- 大きい画面ではアイコンだけにする -->
+                    <li><a href="#"><span class="material-icons">
+                        email
+                    </span><span>Mail</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        event_note
+                    </span><span>Event</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        notification_important
+                    </span><span>Notification</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        face
+                    </span><span>User</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -26,19 +36,31 @@
     <main>
         <div id="side-bar">
             <div id="user">
-                <span id="face"></span>
+                <span id="user-face"></span>
                 <div>
                     <p>user name</p>
                     <p>online</p>
                 </div>
             </div>
-            <div id="search"><p>search</p></div>
+            <div id="search">
+                <input type="text" id="search-box">
+                <button id="search-btn"><span class="material-icons">
+                    search
+                </span></button></div>
             <nav id="side-nav">
                 <ul>
-                    <li><a href="#">売上</a></li>
-                    <li><a href="#">顧客</a></li>
-                    <li><a href="#">社員</a></li>
-                    <li><a href="#">その他</a></li>
+                    <li><a href="#"><span class="material-icons">
+                        timeline
+                    </span><span>売上</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        business
+                    </span><span>顧客</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        person
+                    </span><span>社員</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        inbox
+                    </span><span>その他</span></a></li>
                 </ul>
             </nav>
         </div>

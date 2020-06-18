@@ -9,11 +9,25 @@
     font-family: sans-serif;
     /* 文字の大きさを設定 */
     font-size: 16px;
+    /* インライン要素（テキストなど）を上下中央に揃える */
+    vertical-align: middle;
+}
+/* メインカラーとサブカラーを決める */
+:root {
+    --color1:#03588C; /* main */
+    --color2:#73A2BF; /* light */
+    --color3:#023059; /* dark */
+    --color4:#5D7CA6; /* sub */
+    --color5:#F2CAA7; /* accent */
+}
+
+/* ---- タグへの設定 ---- */
+ul {
     /* リストのスタイルを無しに */
     list-style: none;
 }
 a {
-    /* 文字のスタイルを無しに */
+    /* 文字の下線スタイルを無しに */
     text-decoration: none;
     /* 仮に文字色は白 */
     color: #fff;
@@ -29,22 +43,17 @@ a:hover {
         rgba(225,225,225,0.2)
     );
 }
-
-/* メインカラーとサブカラーを決める */
-:root {
-    --color1:#03588C; /* main */
-    --color2:#73A2BF; /* light */
-    --color3:#023059; /* dark */
-    --color4:#5D7CA6; /* sub */
-    --color5:#F2CAA7; /* accent */
+p {
+    padding: 0 1em;
 }
+
 
 /* ---- 一番上のヘッダーバー ----*/
 #top-bar {
     /* 背景に色をつけて文字は白抜きにする */
     background-color:var(--color1);
     color: #fff;
-    /* 左端のロゴと右端の各アイコンを横並び(flex)にする。その後、均等割り付け（space-between）にて両端に寄せる */
+    /* 左端のh1ロゴと右端のnavを横並び(flex)にする。その後、均等割り付け（space-between）にて両端に寄せる */
     display: flex; 
     justify-content: space-between;
     /* アイテムを縦位置中央にする */
@@ -57,9 +66,10 @@ h1 {
     padding: 0.5em;
 }
 #top-nav ul {
-    /* 各アイコン(li)を横並びにする */
+    /* ナビの各項目(li)を横並びにする */
    display: flex; 
 }
+
 
 /* ---- 左のサイドバー ---- */
 #side-bar {
@@ -67,19 +77,52 @@ h1 {
     background-color: var(--color4);
     color: #fff;
     /* 幅は左端からディスプレイの20％の幅 */
-    width: 15%;
+    width: 20vw;
     min-width: 12em;
     /* 高さは仮で最低800px */
     min-height:800px;
 }
-/* ---- 左のユーザー情報 ---- */
 #user {
+    /* ユーザー情報の背景色 */
     background-color: var(--color3);
     padding: 10px;
     /* 顔写真と名前を横並び */
     display: flex;
 }
-/* ---- サイドナビ ---- */
+#user-face {
+    /* 仮に顔写真orアイコンスペース */
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+}
+#search {
+    padding: 1em;
+    /* 検索ボックスとボタンをくっつける */
+    display: flex;
+}
+#search-box {
+    width: 80%;
+    /* 枠のスタイルを無くす */
+    border-style: none;
+    /* 左だけ丸角にする */
+    border-radius:  3px 0 0 3px;
+    height: 30px;
+}
+#search-btn {
+    /*  枠のスタイルを無くす  */
+    border-style: none;
+    /* 右だけ丸角にする */
+    border-radius:  0 3px 3px 0;
+    /* 背景色は白 */
+    background-color:var(--color3);
+    color: #fff;
+    padding: 0 0.5em  0 0.5em;
+}
+#search-btn:hover {
+    background:var(--color1);
+    cursor: pointer;
+}
 #side-nav a {
     /* 上だけ区切り線を入れる */
     border-top: solid 1px #fff;
@@ -89,16 +132,8 @@ h1 {
     /* 最後のliのみ下だけ区切り線を入れる */
     border-bottom: solid 1px #fff;
 }
-#face {
-    /* 仮に顔写真orアイコンスペース */
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-}
-p {
-    padding: 0 1em;
-}
+
+
 
 
 
