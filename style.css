@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* ---- 全体の設定 ---- */
+
+    /* 横幅とブレークpointについて。320pxを最低確保、768未満まではモバイル対応、最大1200pxまで。 */
+    /* 縦はipadが768*1024らしい */
+
 * {
     /* まずはスタイリングしやすいようにmargin＆paddingを無くしておく */
     margin: 0;
@@ -50,6 +54,8 @@ p {
 
 /* ---- 一番上のヘッダーバー ----*/
 #top-bar {
+    /* 横幅は画面サイズ */
+    width: 100vw;
     /* 背景に色をつけて文字は白抜きにする */
     background-color:var(--color1);
     color: #fff;
@@ -59,11 +65,22 @@ p {
     /* アイテムを縦位置中央にする */
     align-items: center;
 }
+#left-menu {
+    display: flex;
+    align-items: center;
+}
+#toggle {
+    border-style: none;
+    padding: 1em;
+    background-color: var(--color1);
+    color: #fff;
+    cursor: pointer;
+}
 h1 {
     /* 文字の大きさを仮に25px */
     font-size: 25px;
     /* 左右に1文字分のpaddingを入れる */
-    padding: 0.5em;
+    padding: 0.5em 0.5em 0.5em 1em;
 }
 #top-nav ul {
     /* ナビの各項目(li)を横並びにする */
@@ -77,10 +94,8 @@ h1 {
     background-color: var(--color4);
     color: #fff;
     /* 幅は左端からディスプレイの20％の幅 */
-    width: 20vw;
-    min-width: 12em;
-    /* 高さは仮で最低800px */
-    min-height:800px;
+    width: 15%;
+    min-width: 15em;
 }
 #user {
     /* ユーザー情報の背景色 */
@@ -133,7 +148,30 @@ h1 {
     border-bottom: solid 1px #fff;
 }
 
-
+/*---- レスポンシブweb対応（横幅768px未満まではモバイル対応）---- */
+/* 小さい画面での対応 */
+@media(max-width:767px){
+    .max-none{
+        display: none;
+    }
+    h1 {
+        font-size: 18px;
+        padding: 0.5em;
+    }
+    #side-bar {
+        display: none;
+    }
+}
+/* 大きい画面での対応 */
+@media(min-width:767px){
+    #side-bar{
+        height: 100vw;
+        
+    }
+    #toggle {
+        display: none;
+    }
+}
 
 
 
