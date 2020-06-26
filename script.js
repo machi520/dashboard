@@ -4,9 +4,11 @@ const ScreenWidth = parent.screen.width;
 console.log(ScreenWidth);
 
 if (ScreenWidth < 768) {
-    $(function(){
+    $(function () {
         $('#side-bar').hide();
+        $('#row1').addClass('position');
     });
+
 }
 
 // トグルボタンが押されたら
